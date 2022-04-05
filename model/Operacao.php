@@ -10,7 +10,7 @@ class Operacao{
 
     function createDesenho($campo_2,$campo_3){
         $stmt = $this->con->prepare("INSERT INTO desenho_tb(nomedesenho,imgdesenho) VALUES (?,?)");
-        $stmt->bind_param("sss",$campo_2,$campo_3);
+        $stmt->bind_param("ss",$campo_2,$campo_3);
         if($stmt->execute())
             return true;
         return var_dump($stmt);
